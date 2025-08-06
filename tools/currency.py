@@ -14,9 +14,6 @@ def convert_currency(amount, from_currency, to_currency):
         data = response.json()
 
         if response.status_code == 200 and data.get("success"):
-            print(data)
-            print(round(data["result"], 2))
-            print(round(data["info"]["rate"], 4))
             return {
                 "converted_amount": round(data["result"], 2),
                 "exchange_rate": round(data["info"]["rate"], 2)
